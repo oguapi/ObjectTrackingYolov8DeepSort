@@ -38,7 +38,7 @@ while ret:
             print(r) # One result is [564.0, 35.0, 592.0, 122.0, 0.6188790798187256, 0.0]
             x1, y1, x2, y2, score, class_id= r #The class id referent to coco_classes.txt
             class_id= int(class_id)
-            if score > detection_threshold:
+            if score > detection_threshold and class_id==0.0:
                 detections.append([int(x1), int(y1), int(x2), int(y2), score])
 
         #Here we going to update all the tracking information because for the way object 
